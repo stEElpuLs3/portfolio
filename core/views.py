@@ -7,7 +7,7 @@ import os
 
 def projetos(request):
     projetos = Projeto.objects.all()
-    return render(request, 'core/projetos.html', {'projetos': projetos})
+    return render(request, 'projetos.html', {'projetos': projetos})
 
 def contact(request):
     if request.method == 'POST':
