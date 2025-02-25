@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Projetos</title>
+</head>
+<body>
+    <h1>Meus Projetos</h1>
+    <ul>
+        {% for projeto in projetos %}
+            <li>
+                <h2>{{ projeto.titulo }}</h2>
+                <p>{{ projeto.descricao }}</p>
+                {% if projeto.link %}
+                    <a href="{{ projeto.link }}">Ver Projeto</a>
+                {% endif %}
+                {% if projeto.imagem %}
+                    <img src="{{ projeto.imagem.url }}" alt="{{ projeto.titulo }}">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
