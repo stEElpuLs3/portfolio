@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Projetos</title>
-</head>
-<body>
+
+{% extends 'main.html' %} 
+
+
+{% block title %}Meus Projetos{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container">
     <h1>Meus Projetos</h1>
-    <ul>
-        {% extends 'main.html' %}
-        {% block content %}
-            <h1>Lista de Projetos</h1>
-            {% for projeto in projetos %}
-                <div class="project">
-                    <h3>{{ projeto.title }}</h3>
-                    <p>{{ projeto.description }}</p>
-                    <img src="{{ projeto.image.url }}" alt="{{ projeto.title }}">
-                </div>
-            {% endfor %}
-        {% endblock %}
-    </ul>
-</body>
-</html>
+
+    <div class="projetos-grid">
+        {% for projeto in projetos %}
+        <div class="projeto-card">
+            <img src="{{ projeto.image.url }}" alt="{{ projeto.title }}">
+            <h3>{{ projeto.title }}</h3>
+            <p>{{ projeto.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
