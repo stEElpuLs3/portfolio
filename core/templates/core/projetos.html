@@ -8,18 +8,17 @@
 <body>
     <h1>Meus Projetos</h1>
     <ul>
-        {% for projeto in projetos %}
-            <li>
-                <h2>{{ projeto.titulo }}</h2>
-                <p>{{ projeto.descricao }}</p>
-                {% if projeto.link %}
-                    <a href="{{ projeto.link }}">Ver Projeto</a>
-                {% endif %}
-                {% if projeto.imagem %}
-                    <img src="{{ projeto.imagem.url }}" alt="{{ projeto.titulo }}">
-                {% endif %}
-            </li>
-        {% endfor %}
+        {% extends 'main.html' %}
+        {% block content %}
+            <h1>Lista de Projetos</h1>
+            {% for projeto in projetos %}
+                <div class="project">
+                    <h3>{{ projeto.title }}</h3>
+                    <p>{{ projeto.description }}</p>
+                    <img src="{{ projeto.image.url }}" alt="{{ projeto.title }}">
+                </div>
+            {% endfor %}
+        {% endblock %}
     </ul>
 </body>
 </html>

@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Entre em Contato</h2>
+
+{% if success %}
+    <p>Sua mensagem foi enviada com sucesso!</p>
+{% else %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+{% endif %}
+{% endblock %}
