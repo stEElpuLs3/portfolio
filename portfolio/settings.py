@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--j_#ie#sw&!ijlor)$d-7cg=z63yij4g1t$q=w9w-0yiu4&4k7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = not os.getenv("RAILWAY")
 
-ALLOWED_HOSTS = ["*"] if os.getenv("RAILWAY") else ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["*"] 
 
 
 
