@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--j_#ie#sw&!ijlor)$d-7cg=z63yij4g1t$q=w9w-0yiu4&4k7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = not os.getenv("RAILWAY")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"] if os.getenv("RAILWAY") else ["127.0.0.1"]
 
 
 # Application definition
@@ -51,13 +52,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
-import os
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Pasta para collectstatic
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Sua pasta static global
 ]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TEMPLATES = [
     {
@@ -81,12 +84,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse("postgresql://postgres:oTrsHPdsFDrrsAzTmHdxQDFggbQzzyxi@hopper.proxy.rlwy.net:39127/railway", conn_max_age=600),
 }
+
 
 # Configurações de E-mail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
