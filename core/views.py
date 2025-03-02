@@ -5,6 +5,9 @@ from django.http import FileResponse
 import os
 
 
+def home(request):
+    return render(request, 'main.html')
+
 def projetos(request):
     projetos = Projeto.objects.all()
     return render(request, 'projetos.html', {'projetos': projetos})
