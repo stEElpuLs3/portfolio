@@ -6,6 +6,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('projetos/', views.projetos, name='projetos'),
     path('curriculo/', views.curriculo, name='curriculo'),
+    path('contact/', views.contact, name='contact'),
+    path('', views.home, name='home'),
+    path('miaudotefotos/', views.miaudotefotos, name='miaudotefotos')
 ]
 
 if not settings.DEBUG:

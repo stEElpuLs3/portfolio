@@ -1,21 +1,69 @@
-
-{% extends 'main.html' %} 
 {% load static %}
-
-{% block title %}Meus Projetos{% endblock %}
-
-{% block content %}
-<div class="container">
-    <h1>Meus Projetos</h1>
-
-    <div class="projetos-grid">
-        {% for projeto in projetos %}
-        <div class="projeto-card">
-            <img src="{{ projeto.image.url }}" alt="{{ projeto.title }}">
-            <h3>{{ projeto.title }}</h3>
-            <p>{{ projeto.description }}</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">Apresentação</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'curriculo' %}">Currículo</a></li>
+                    <li><a href="{% url 'projetos' %}">Portfólio</a></li>
+                    <li><a href="{% url 'contact' %}">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        {% endfor %}
-    </div>
-</div>
-{% endblock %}
+    </header>
+
+    <section class="projetos">
+        <h1>Meus Projetos</h1>
+        <div class="projetos-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <h2>Miaudote</h2>
+                <p><strong>Desenvolvedores:</strong> Vitor Pagotto, Eduardo Romeu, Eugenio Domingues</p>
+                <p><strong>Linguagem:</strong> Javascript</p>
+                <p><strong>Framework:</strong> React</p>
+                <div class="avaliacao">
+                    <span class="estrelas">★★★★☆</span>
+                    <span class="nota">4.0</span>
+                </div>
+                <div class="botoes">
+                    <a href="{% url 'miaudotefotos' %}" class="btn-fotos">Ver Fotos</a>
+                    <a href="https://github.com/stEElpuLs3/miaudote" target="_blank" class="btn-repositorio">Ver Repositório</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h2>Nome do Projeto 2</h2>
+                <p><strong>Desenvolvedores:</strong> Vitor Pagotto, Colaborador</p>
+                <p><strong>Linguagem:</strong> JavaScript</p>
+                <p><strong>Framework:</strong> React</p>
+                <div class="avaliacao">
+                    <span class="estrelas">★★★☆☆</span>
+                    <span class="nota">3.0</span>
+                </div>
+                <div class="botoes">
+                    <a href="{% static 'projeto2/foto1.jpg' %}" target="_blank" class="btn-fotos">Ver Fotos</a>
+                    <a href="https://github.com/seu-usuario/repositorio2" target="_blank" class="btn-repositorio">Ver Repositório</a>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 - Desenvolvido por Vitor Pagotto | +5527997577555 | vitorvrp7@gmail.com <a href="mailto:vitorvrp7@gmail.com" style="color: white;">Entre em contato</a></p>
+    </footer>
+</body>
+</html>

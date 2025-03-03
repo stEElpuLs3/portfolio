@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        
         <!-- Tags meta existentes -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,14 +19,103 @@
         <meta property="og:url" content="[URL do seu site]">
         
         <title>{% block title %} Vitor Pagotto - Desenvolvedor Full Stack{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
-        
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
     
 <body>
-    
     {% block content %}
-    <h1>MEU HEROI</h1>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/">Apresentação</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'curriculo' %}">Currículo</a></li>
+                    <li><a href="{% url 'projetos' %}">Portfólio</a></li>
+                    <li><a href="{% url 'contact' %}">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <img src="{% static 'vitor1.png' %}" alt="Vitor Pagotto">
+        <h1>Vitor Pagotto</h1>
+        <p>Estudante de Engenharia de Software | Desenvolvimento em Java, JavaScript e Python | Experiência com React e Django</p>
+    </section>
+    
+    <section class="section">
+        <h2>Sobre</h2>
+        <br>
+        <p><b>Estudo Engenharia de Software desde janeiro de 2024, mas trabalho na área de tecnologia há 7 anos. 
+            Estou desenvolvendo projetos fullstack com python, django, react e node.js e também com inteligência artificial.
+            Na página de 'projetos' você pode ver alguns dos meus trabalhos.</b>
+        </p>
+    </section>
+    
+    <section class="section">
+        <h2>Trajetória Acadêmica e Profissional</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2020 - Empreendendo Sozinho</h3>
+                    <p>Iniciei minha própria loja no ramo de manutenção de equipamentos eletrônicos.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2022 - Primeiros Passos na Programação</h3>
+                    <p>Comecei a estudar programação por conta própria, focando em Python e JavaScript.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2023 - Projetos Pessoais</h3>
+                    <p>Desenvolvi pequenos projetos pessoais, me desafiando a superar meus limites</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2024 - Início da Faculdade</h3>
+                    <p>Ingressei no curso de Engenharia de Software na Uninter.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2024 - Projetos Fullstack</h3>
+                    <p>Desenvolvimento de projetos fullstack com Django, React e Node.js.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2025 - Inteligência Artificial</h3>
+                    <p>Iniciei estudos e projetos práticos em inteligência artificial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Para o futuro...</h2>
+        <br>
+        <p>Quero me especializar em Inteligência Artificial e me tornar um desenvolvedor fullstack de alto nível.</p>
+    </section>
+
+    <!-- Botões para LinkedIn e GitHub -->
+    <section class="section">
+        <h2>Conecte-se Comigo</h2>
+        <br>
+        <div class="social-buttons">
+            <a href="https://www.linkedin.com/in/vitor-pagotto-bba7561bb/" target="_blank" class="btn-linkedin">LinkedIn</a>
+            <a href="https://github.com/stEElpuLs3" target="_blank" class="btn-github">GitHub</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2025 - Desenvolvido por Vitor Pagotto | +5527997577555 | vitorvrp7@gmail.com <a href="mailto:vitorvrp7@gmail.com" style="color: white;">Entre em contato</a></p>
+    </footer>
+    
     {% endblock %}
 </body>
 </html>

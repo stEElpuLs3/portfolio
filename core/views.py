@@ -5,6 +5,9 @@ from django.http import FileResponse
 import os
 
 
+def miaudotefotos(request):
+    return render(request, 'miaudotefotos.html')
+
 def home(request):
     return render(request, 'main.html')
 
@@ -24,11 +27,12 @@ def contact(request):
             ['vitorvrp7@gmail.com'],
             fail_silently=False,
         )
-        return render(request, 'core/contact.html', {'success': True})
-    return render(request, 'core/contact.html')
+        return render(request, 'contact.html', {'success': True})
+    return render(request, 'contact.html')
 
 
 def curriculo(request):
+    
     # Caminho absoluto para o arquivo PDF
     curriculo_path = os.path.join('static', 'curriculo.pdf')
     

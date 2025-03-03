@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria do Projeto 1</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">Apresentação</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'curriculo' %}">Currículo</a></li>
+                    <li><a href="{% url 'projetos' %}">Portfólio</a></li>
+                    <li><a href="{% url 'contact' %}">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="galeria">
+        <h1>Galeria do Projeto 1</h1>
+        <div class="fotos-container">
+            <img src="{% static 'home.png' %}" alt="Foto 1 do Projeto 1">
+            <img src="{% static 'adocao.png' %}" alt="Foto 2 do Projeto 1">
+            <img src="{% static 'cadastro.png' %}" alt="Foto 3 do Projeto 1">
+            <img src="{% static 'busca.png' %}" alt="Foto 4 do Projeto 1">
+            <img src="{% static 'final.png' %}" alt="Foto 5 do Projeto 1">
+            <!-- Adicione mais fotos conforme necessário -->
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 - Desenvolvido por Vitor Pagotto | +5527997577555 | vitorvrp7@gmail.com <a href="mailto:vitorvrp7@gmail.com" style="color: white;">Entre em contato</a></p>
+    </footer>
+</body>
+</html>
