@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.conf import settings
 from django.core.mail import send_mail
 from .models import Projeto
 from django.http import FileResponse
@@ -15,20 +16,30 @@ def projetos(request):
     projetos = Projeto.objects.all()
     return render(request, 'projetos.html', {'projetos': projetos})
 
-def contact(request):
+def contact (request):
     if request.method == 'POST':
-        name = request.POST.get('name')
+        nome = request.POST.get('nome')
         email = request.POST.get('email')
-        message = request.POST.get('message')
+        assunto = request.POST.get('assunto')
+        mensagem = request.POST.get('mensagem')
+
+        # Envie o e-mail (opcional)
         send_mail(
-            f'Contato de {name}',
-            message,
-            email,
-            ['vitorvrp7@gmail.com'],
+            f'Contato: {assunto}',
+            f'Nome: {nome}\nE-mail: {email}\nMensagem: {mensagem}',
+            settings.EMAIL_HOST_USER,
+            ['vitorvrp7@gmail.com'],  # Substitua pelo seu e-mail
             fail_silently=False,
         )
-        return render(request, 'contact.html', {'success': True})
+
+        # Redirecione para uma página de sucesso
+        return redirect('contactsuccess')
+
     return render(request, 'contact.html')
+
+
+def contactsuccess (request):
+    return render(request, 'contactsuccess.html')
 
 
 def curriculo(request):

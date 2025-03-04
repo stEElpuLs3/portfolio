@@ -8,7 +8,8 @@ urlpatterns = [
     path('curriculo/', views.curriculo, name='curriculo'),
     path('contact/', views.contact, name='contact'),
     path('', views.home, name='home'),
-    path('miaudotefotos/', views.miaudotefotos, name='miaudotefotos')
+    path('miaudotefotos/', views.miaudotefotos, name='miaudotefotos'),
+    path('contactsuccess', views.contato_sucesso, name='contactsuccess'),
 ]
 
 if not settings.DEBUG:

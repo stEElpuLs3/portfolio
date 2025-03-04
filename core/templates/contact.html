@@ -1,27 +1,57 @@
-
-{% extends 'main.html' %}
-
-{% block content %}
-<h2>Entre em Contato</h2>
-
-{% if success %}
-    <p>Sua mensagem foi enviada com sucesso!</p>
-{% else %}
-    <form method="post">
-        {% csrf_token %}
-        <div>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">Apresentação</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'curriculo' %}">Currículo</a></li>
+                    <li><a href="{% url 'projetos' %}">Projetos</a></li>
+                    <li><a href="{% url 'contact' %}">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit">Enviar</button>
-    </form>
-{% endif %}
-{% endblock %}
+    </header>
+
+    <section class="contato">
+        <h1>Entre em Contato</h1>
+        <form id="form-contato" method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 - Desenvolvido por Vitor Pagotto | +5527997577555 | vitorvrp7@gmail.com <a href="mailto:vitorvrp7@gmail.com" style="color: white;">Entre em contato</a></p>
+    </footer>
+
+    <!-- Adicione scripts para validação aqui -->
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
