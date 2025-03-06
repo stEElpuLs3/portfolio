@@ -25,6 +25,8 @@
 
     <section class="contato">
         <h1>Entre em Contato</h1>
+        <p>Ola, se você tem alguma dúvida ou sugestão, entre em contato comigo preenchendo o formulário abaixo.<br> 
+        Estou ansioso para saber o que voce tem a dizer!</p>
         <form id="form-contato" method="post" action="{% url 'contact' %}">
             {% csrf_token %}
             <div class="form-group">
@@ -51,7 +53,7 @@
         <p>© 2025 - Desenvolvido por Vitor Pagotto | +5527997577555 | vitorvrp7@gmail.com <a href="mailto:vitorvrp7@gmail.com" style="color: white;">Entre em contato</a></p>
     </footer>
 
-    <!-- Adicione scripts para validação aqui -->
+    
     <script src="{% static 'scripts.js' %}"></script>
 </body>
 </html>
