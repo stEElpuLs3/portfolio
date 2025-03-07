@@ -5,6 +5,8 @@ from .models import Projeto
 from django.http import FileResponse
 import os
 
+def personalfotos(request):
+    return render(request, 'personalfotos.html')
 
 def miaudotefotos(request):
     return render(request, 'miaudotefotos.html')

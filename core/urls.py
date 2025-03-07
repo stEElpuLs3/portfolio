@@ -11,6 +11,7 @@ urlpatterns = [
     path('miaudotefotos/', views.miaudotefotos, name='miaudotefotos'),
     path('contactsuccess', views.contato_sucesso, name='contactsuccess'),
     path('calendariofotos/', views.calendariofotos, name='calendariofotos'),
+    path('personalfotos/', views.personalfotos, name='personalfotos'),
 ]
 
 if not settings.DEBUG:

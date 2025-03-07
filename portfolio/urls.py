@@ -7,6 +7,7 @@ from core.views import curriculo
 from core.views import miaudotefotos  
 from core.views import contactsuccess
 from core.views import calendariofotos
+from core.views import personalfotos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,5 +17,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('miaudotefotos/', miaudotefotos, name='miaudotefotos'),
     path('contactsuccess', contactsuccess, name='contactsuccess'),
-    path('calendariofotos/', calendariofotos, name='calendariofotos'),    # Incluindo as URLs do app core
+    path('calendariofotos/', calendariofotos, name='calendariofotos'),
+    path('personalfotos/', personalfotos, name='personalfotos'),
+        # Incluindo as URLs do app core
 ]
