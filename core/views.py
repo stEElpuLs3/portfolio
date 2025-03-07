@@ -9,6 +9,9 @@ import os
 def miaudotefotos(request):
     return render(request, 'miaudotefotos.html')
 
+def calendariofotos(request):
+    return render(request, 'calendariofotos.html')
+
 def home(request):
     return render(request, 'main.html')
 

@@ -45,17 +45,34 @@
 
             <!-- Card 2 -->
             <div class="card">
-                <h2>Nome do Projeto 2</h2>
-                <p><strong>Desenvolvedores:</strong> Vitor Pagotto, Colaborador</p>
+                <h2>Calendario</h2>
+                <p><strong>Desenvolvedores:</strong> Vitor Pagotto</p>
                 <p><strong>Linguagem:</strong> JavaScript</p>
                 <p><strong>Framework:</strong> React</p>
+                <p><strong>Descrição:</strong> Aplicativo de calendario de eventos, feito com o objetivo de testar minhas habilidades</p>
                 <div class="avaliacao">
                     <span class="estrelas">★★★☆☆</span>
                     <span class="nota">3.0</span>
                 </div>
                 <div class="botoes">
-                    <a href="{% static 'projeto2/foto1.jpg' %}" target="_blank" class="btn-fotos">Ver Fotos</a>
-                    <a href="https://github.com/seu-usuario/repositorio2" target="_blank" class="btn-repositorio">Ver Repositório</a>
+                    <a href="{% url 'calendariofotos' %}" target="_blank" class="btn-fotos">Ver Fotos</a>
+                    <a href="https://github.com/stEElpuLs3/calendario" target="_blank" class="btn-repositorio">Ver Repositório</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Meu Site</h2>
+                <p><strong>Desenvolvedores:</strong> Vitor Pagotto</p>
+                <p><strong>Linguagem:</strong> Python</p>
+                <p><strong>Framework:</strong> Django</p>
+                <p><strong>Descrição:</strong> Site criado para me comunicar com possiveis recrutadores e mostrar meus trabalhos e habilidades</p>
+                <div class="avaliacao">
+                    <span class="estrelas">★★★★☆</span>
+                    <span class="nota">4.0</span>
+                </div>
+                <div class="botoes">
+                    <a href="{% static 'calendariofotos' %}" target="_blank" class="btn-fotos">Ver Fotos</a>
+                    <a href="https://github.com/stEElpuLs3/portfolio" target="_blank" class="btn-repositorio">Ver Repositório</a>
                 </div>
             </div>
 
